@@ -117,7 +117,7 @@
 			height: 200px;
 			top: 50%;
 			left: 50%;
-			transform-origin: 0% 50%!important;
+			transform-origin: 150px 100px!important;
 		}
 
 		#bgGraphics {
@@ -291,7 +291,6 @@
 				};
 				$(document).ready(function() {
 					animateDiv(idNum);
-
 				});
 			}
 			for (var i = 0; i < 7; i++) {
@@ -300,49 +299,50 @@
 		}
 		var mouseMovementX;
 		var mouseMovementY;
-		$(document).on('mousemove', function(e) {
-			cursorInPage = true;
+		$(document).mousemove(function(e) {
 			mouseMovementX = e.pageX;
 			mouseMovementY = e.pageY;
+		});
+		$(document).on('mousemove', function(e) {
+			cursorInPage = true;
+
 			function Duck(i) {
 				this.idNum = i;
-				this.dx = mouseMovementX;
-				this.dy = mouseMovementY;
-				this.animateBaby = function() {
+
+				this.animateDiv = function(idNum) {
+					this.dx = mouseMovementX;
+					this.dy = mouseMovementY;
 					this.baby = $('#topCrawl');
-					this.babyCenter = [baby.offset().left + baby.width() / 2, baby.offset().top + baby.height() / 2];
-					this.babyDirection = Math.atan2(dx - babyCenter[0], -(dy - babyCenter[1])) * (180 / Math.PI);
-					$('#topCrawl').animateRotate(babyDirection, {
-						duration: 100,
-						easing: 'linear',
-						complete: function() {},
-						step: function() {}
-					});
+					this.babyCenter = [baby.offset().left + baby.width() , baby.offset().top + baby.height() / 2];
+					this.babyDirection = Math.atan2(-(dx - babyCenter[1]), (dy - babyCenter[0])) * (180 / Math.PI);
+					this.item = $('#' + idNum);
+					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
+					this.direction = Math.atan2((dx - itemCenter[0]), -(dy - itemCenter[1])) * (180 / Math.PI);
+					this.babyrotated = $('#topCrawl').getRotateAngle();
+					this.rotated = $('#' + idNum).getRotateAngle();
+
+					$('#topCrawl').rotate({
+						duration: 1000,
+						angle: babyrotated,
+						animateTo: babyDirection +90,
+					})
 					$('#topCrawl').animate({
 						top: mouseMovementY,
 						left: mouseMovementX
-					}, 100, function() {
-							animateBaby();
+					}, 1, function() {
 					});
-				}
-				this.animateDiv = function(idNum) {
-					this.item = $('#' + idNum);
-					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
-					this.direction = Math.atan2(dx - itemCenter[0], -(dy - itemCenter[1])) * (180 / Math.PI);
-					$('#' + idNum).animateRotate(direction, {
-						duration: 100,
-						easing: 'linear',
-						complete: function() {},
-						step: function() {}
-					});
+					$('#' + idNum).rotate({
+						duration: 1000,
+						angle: rotated,
+						animateTo: direction,
+					})
 					$('#' + idNum).animate({
-						top: mouseMovementY,
-						left: mouseMovementX
-					}, 500 + (100 * idNum + 1), function() {
+						top: mouseMovementY+100,
+						left: mouseMovementX+300+(100*idNum+1)
+					}, 500 + (150 * idNum + 1), function() {
 						animateDiv(idNum);
-						animateBaby();
 					});
-
+					//END animateDiv
 				};
 			}
 			for (var i = 0; i < 7; i++) {
