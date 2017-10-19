@@ -317,7 +317,7 @@
 					this.babyDirection = Math.atan2(-(dx - babyCenter[1]), (dy - babyCenter[0])) * (180 / Math.PI);
 					this.item = $('#' + idNum);
 					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
-					this.direction = Math.atan2((dx - itemCenter[0]), -(dy - itemCenter[1])) * (180 / Math.PI);
+					this.direction = Math.atan2((dx+100 - itemCenter[0]), -(dy+150 - itemCenter[1])) * (180 / Math.PI);
 					this.babyrotated = $('#topCrawl').getRotateAngle();
 					this.rotated = $('#' + idNum).getRotateAngle();
 
@@ -328,7 +328,7 @@
 					})
 					$('#topCrawl').animate({
 						top: mouseMovementY-100,
-						left: mouseMovementX-300
+						left: mouseMovementX-150
 					}, 100, function() {
 					});
 					$('#' + idNum).rotate({
@@ -338,7 +338,7 @@
 					})
 					$('#' + idNum).animate({
 						top: mouseMovementY+100,
-						left: mouseMovementX+300+(100*idNum+1)
+						left: mouseMovementX+(100*idNum+1)
 					}, 500 + (150 * idNum + 1), function() {
 						animateDiv(idNum);
 					});
