@@ -322,14 +322,14 @@
 					this.rotated = $('#' + idNum).getRotateAngle();
 
 					$('#topCrawl').rotate({
-						duration: 1000,
+						duration: 100,
 						angle: babyrotated,
-						animateTo: babyDirection +90,
+						animateTo: babyDirection,
 					})
 					$('#topCrawl').animate({
-						top: mouseMovementY,
-						left: mouseMovementX
-					}, 1, function() {
+						top: mouseMovementY-100,
+						left: mouseMovementX-300
+					}, 100, function() {
 					});
 					$('#' + idNum).rotate({
 						duration: 1000,
