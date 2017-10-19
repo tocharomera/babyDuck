@@ -6,97 +6,33 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="web/jQueryRotate.js"></script>
 	<style>
-	@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-			/* Styles */
-			/*#crawl {
+	@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+		#crawl {
 				position: absolute;
 				height: 30%;
 				width: 100%;
 
 				background: #1B9F07;
-			}*/
-			/*#links {
+			}
+		#links {
 				color: floralwhite;
 				height: 10%;
 				bottom: 10%;
 				width: 100%;
 				position: absolute;
 				font-family: babyblocks;
-				z-index: 2;
-			}*/
-			/*#text {
+				z-index: 4;
+			}
+		#text {
 
 					font-size: 2.3em;
 					height: 70%;
 					top: 30%;
 					width: 100%;
 					position: absolute;
-					z-index: 2;
+					z-index: 4;
 					font-family: babyblocks;
 				}
-	*/
-			.ducks {
-				position: absolute;
-				top: 40%;
-				left: 40%;
-				height: 100px;
-				width: 100px;
-			}
-			#anim {
-				position: absolute;
-				top: 150px;
-				width: 320px;
-				height: 480px;
-				max-height: 480px;
-				max-width: 320px;
-				margin: 0;
-			}
-			@font-face {
-				font-family: babyblocks;
-				src: url(web/babyblocks.ttf);
-			}
-			#bg {
-				top: 0px;
-				left: 0px;
-				height: 480px;
-				width: 320px;
-				position: absolute;
-				display: block;
-				margin: auto;
-				z-index: 2;
-			}
-		}
-
-		@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1)
-		/* Styles */
-		/*#crawl {
-				position: absolute;
-				height: 30%;
-				width: 100%;
-
-				background: #1B9F07;
-			}*/
-		/*#links {
-				color: floralwhite;
-				height: 10%;
-				bottom: 10%;
-				width: 100%;
-				position: absolute;
-				font-family: babyblocks;
-				z-index: 2;
-			}*/
-		/*#text {
-
-					font-size: 2.3em;
-					height: 70%;
-					top: 30%;
-					width: 100%;
-					position: absolute;
-					z-index: 2;
-					font-family: babyblocks;
-				}
-	*/
-
 		@font-face {
 			font-family: babyblocks;
 			src: url(web/babyblocks.ttf);
@@ -104,7 +40,112 @@
 
 		#anim {
 			position: absolute;
+			width: 100%;
+			height: 100%;
+			max-width: 160px;
+			margin: auto;
+		}
 
+		#topCrawl {
+			position: absolute;
+			width: 300px;
+			height: 200px;
+			top: 50%;
+			left: 50%;
+			transform-origin: 150px 100px!important;
+		}
+
+		#bgGraphics {
+			height: 110%;
+			width: 110%;
+			position: absolute;
+			background-color: #35A936;
+			display: block;
+			margin: -10;
+			top: 0px;
+			left: 0px;
+			padding: 0;
+			z-index: -3;
+		}
+
+		#bg {
+			background-color: #35A936;
+			top: 100px;
+			left: 0px;
+			height: 120%;
+			width: 100%;
+			position: absolute;
+			display: block;
+			margin: auto;
+			z-index: -2;
+		}
+
+		#trees {
+			top: -250px;
+			left: -50px;
+			height: 90%;
+			width: 120%;
+			position: absolute;
+			display: block;
+			margin: auto;
+			z-index: -1;
+		}
+
+		.ducks {
+			position: absolute;
+			top: 40%;
+			left: 40%;
+			height: 100px;
+			width: 100px;
+			transform-origin: 0% 50%!important;
+		}
+
+		#leaves {
+			top: -450px;
+			left: -50px;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			display: block;
+			margin: auto;
+			z-index: 3;
+		}
+		}
+
+		@media only screen  and (min-width : 1224px) {/* Styles */
+		#crawl {
+				position: absolute;
+				height: 30%;
+				width: 100%;
+
+				background: #1B9F07;
+			}
+		#links {
+				color: floralwhite;
+				height: 10%;
+				bottom: 10%;
+				width: 100%;
+				position: absolute;
+				font-family: babyblocks;
+				z-index: 4;
+			}
+		#text {
+
+					font-size: 2.3em;
+					height: 70%;
+					top: 30%;
+					width: 100%;
+					position: absolute;
+					z-index: 4;
+					font-family: babyblocks;
+				}
+		@font-face {
+			font-family: babyblocks;
+			src: url(web/babyblocks.ttf);
+		}
+
+		#anim {
+			position: absolute;
 			width: 100%;
 			height: 100%;
 			max-width: 160px;
@@ -190,9 +231,8 @@
 		<img src="web/babyCrawlanimTopP0010-0048.svg" id="topCrawl"></img>
 	</div>
 
-	<!--
 	<div id="cuerpo">
-		<iframe id="crawl" src="https://player.vimeo.com/video/168608161?autoplay=1&loop=1&background=ffff" height="640px" width="360px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<!--<iframe id="crawl" src="https://player.vimeo.com/video/168608161?autoplay=1&loop=1&background=ffff" height="640px" width="360px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 	</div>
 	<div id="text">
 		Baby duck is a small child(between 0 and 2 years) that will be involve in an non adult logical enviroment, which will be a difficulty for the player because it will have to deal with the babies coordination of senses with motor responses, and sensory
@@ -203,9 +243,9 @@
 		<br></div>
 	<h1 id="links">
 (In development)
-<<a href="http://issuu.com/tocharomera/docs/gdden">D_O_C: Game Design Document</a>
+<a href="http://issuu.com/tocharomera/docs/gdden">D_O_C: Game Design Document</a>
 </h1>
--->
+
 	<script>
 		var colours = ["white", "coral", "pink", "aqua", "yellow", "gold", "blue"],
 			idx;
@@ -308,37 +348,35 @@
 
 			function Duck(i) {
 				this.idNum = i;
-
 				this.animateDiv = function(idNum) {
 					this.dx = mouseMovementX;
 					this.dy = mouseMovementY;
 					this.baby = $('#topCrawl');
-					this.babyCenter = [baby.offset().left + baby.width() , baby.offset().top + baby.height() / 2];
+					this.babyCenter = [baby.offset().left + baby.width(), baby.offset().top + baby.height() / 2];
 					this.babyDirection = Math.atan2(-(dx - babyCenter[1]), (dy - babyCenter[0])) * (180 / Math.PI);
 					this.item = $('#' + idNum);
 					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
-					this.direction = Math.atan2((dx+100 - itemCenter[0]), -(dy+150 - itemCenter[1])) * (180 / Math.PI);
+					this.direction = Math.atan2((dx + 100 - itemCenter[0]), -(dy + 150 - itemCenter[1])) * (180 / Math.PI);
 					this.babyrotated = $('#topCrawl').getRotateAngle();
 					this.rotated = $('#' + idNum).getRotateAngle();
 
 					$('#topCrawl').rotate({
-						duration: 100,
+						duration: 1000,
 						angle: babyrotated,
 						animateTo: babyDirection,
 					})
 					$('#topCrawl').animate({
-						top: mouseMovementY-100,
-						left: mouseMovementX-150
-					}, 100, function() {
-					});
+						top: mouseMovementY - 100,
+						left: mouseMovementX - 150
+					}, 100, function() {});
 					$('#' + idNum).rotate({
 						duration: 1000,
 						angle: rotated,
 						animateTo: direction,
 					})
 					$('#' + idNum).animate({
-						top: mouseMovementY+100,
-						left: mouseMovementX+(100*idNum+1)
+						top: mouseMovementY + 100,
+						left: mouseMovementX + (100 * idNum + 1)
 					}, 500 + (150 * idNum + 1), function() {
 						animateDiv(idNum);
 					});
