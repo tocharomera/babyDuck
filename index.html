@@ -1,258 +1,211 @@
 <!doctype html>
 <html>
-
 <head>
-	<meta charset="utf-8">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="web/jQueryRotate.js"></script>
-	<style>
-	@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-		#crawl {
-				position: absolute;
-				height: 30%;
-				width: 100%;
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="web/jQueryRotate.js"></script>
+<style>
+@media only screen and (min-width : 1224px) {/* Styles */
+@font-face {
+	font-family: babyblocks;
+	src: url(web/babyblocks.ttf);
+}
+#crawl {
+	position: absolute;
+	height: 30%;
+	width: 100%;
+	background: #1B9F07;
+}
+#links {
+	color: floralwhite;
+	height: 10%;
+	bottom: 5%;
+	width: 100%;
+	position: absolute;
+	font-family: babyblocks;
+	z-index: 4;
+}
+#text {
+	font-size: 2.3em;
+	height: 70%;
+	top: 10%;
+	width: 100%;
+	position: absolute;
+	z-index: 4;
+	font-family: babyblocks;
+}
+#anim {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+#topCrawl {
+	position: absolute;
+	/*errror
+	width: 300px;
+	height: 200px;*/
+	top: 50%;
+	left: 50%;
+	transform-origin: 150px 100px!important;
+}
+.ducks {
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	transform-origin: 0% 50%!important;
+}
+#bg {
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("web/pantallas/bgL.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+}
 
-				background: #1B9F07;
-			}
-		#links {
-				color: floralwhite;
-				height: 10%;
-				bottom: 10%;
-				width: 100%;
-				position: absolute;
-				font-family: babyblocks;
-				z-index: 4;
-			}
-		#text {
+@media (min-width: 480px) and (max-width: 1224px) {
+@font-face {
+	font-family: babyblocks;
+	src: url(web/babyblocks.ttf);
+}
+#links {
+	color: floralwhite;
+	height: 10%;
+	bottom: 5%;
+	width: 100%;
+	position: absolute;
+	font-family: babyblocks;
+	z-index: 4;
+}
+#text {
+	font-size: 2.3em;
+	height: 70%;
+	top: 10%;
+	width: 100%;
+	position: absolute;
+	z-index: 4;
+	font-family: babyblocks;
+}
+#anim {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+#topCrawl {
+	position: absolute;
+	/*EERROORR
+	width: 300px;
+	height: 200px;*/
+	top: 50%;
+	left: 50%;
+	transform-origin: 150px 100px!important;
+}
+.ducks {
+	position: absolute;
+	top: 40%;
+	left: 40%
+	transform-origin: 0% 50%!important;
+}
+#bg {
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("web/pantallas/bgM.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+}
 
-					font-size: 2.3em;
-					height: 70%;
-					top: 30%;
-					width: 100%;
-					position: absolute;
-					z-index: 4;
-					font-family: babyblocks;
-				}
-		@font-face {
-			font-family: babyblocks;
-			src: url(web/babyblocks.ttf);
-		}
-
-		#anim {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			max-width: 160px;
-			margin: auto;
-		}
-
-		#topCrawl {
-			position: absolute;
-			width: 300px;
-			height: 200px;
-			top: 50%;
-			left: 50%;
-			transform-origin: 150px 100px!important;
-		}
-
-		#bgGraphics {
-			height: 110%;
-			width: 110%;
-			position: absolute;
-			background-color: #35A936;
-			display: block;
-			margin: -10;
-			top: 0px;
-			left: 0px;
-			padding: 0;
-			z-index: -3;
-		}
-
-		#bg {
-			background-color: #35A936;
-			top: 100px;
-			left: 0px;
-			height: 120%;
-			width: 100%;
-			position: absolute;
-			display: block;
-			margin: auto;
-			z-index: -2;
-		}
-
-		#trees {
-			top: -250px;
-			left: -50px;
-			height: 90%;
-			width: 120%;
-			position: absolute;
-			display: block;
-			margin: auto;
-			z-index: -1;
-		}
-
-		.ducks {
-			position: absolute;
-			top: 40%;
-			left: 40%;
-			height: 100px;
-			width: 100px;
-			transform-origin: 0% 50%!important;
-		}
-
-		#leaves {
-			top: -450px;
-			left: -50px;
-			height: 100%;
-			width: 100%;
-			position: absolute;
-			display: block;
-			margin: auto;
-			z-index: 3;
-		}
-		}
-
-		@media only screen  and (min-width : 1224px) {/* Styles */
-		#crawl {
-				position: absolute;
-				height: 30%;
-				width: 100%;
-
-				background: #1B9F07;
-			}
-		#links {
-				color: floralwhite;
-				height: 10%;
-				bottom: 10%;
-				width: 100%;
-				position: absolute;
-				font-family: babyblocks;
-				z-index: 4;
-			}
-		#text {
-
-					font-size: 2.3em;
-					height: 70%;
-					top: 30%;
-					width: 100%;
-					position: absolute;
-					z-index: 4;
-					font-family: babyblocks;
-				}
-		@font-face {
-			font-family: babyblocks;
-			src: url(web/babyblocks.ttf);
-		}
-
-		#anim {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			max-width: 160px;
-			margin: auto;
-		}
-
-		#topCrawl {
-			position: absolute;
-			width: 300px;
-			height: 200px;
-			top: 50%;
-			left: 50%;
-			transform-origin: 150px 100px!important;
-		}
-
-		#bgGraphics {
-			height: 110%;
-			width: 110%;
-			position: absolute;
-			background-color: #35A936;
-			display: block;
-			margin: -10;
-			top: 0px;
-			left: 0px;
-			padding: 0;
-			z-index: -3;
-		}
-
-		#bg {
-			background-color: #35A936;
-			top: 100px;
-			left: 0px;
-			height: 120%;
-			width: 100%;
-			position: absolute;
-			display: block;
-			margin: auto;
-			z-index: -2;
-		}
-
-		#trees {
-			top: -250px;
-			left: -50px;
-			height: 90%;
-			width: 120%;
-			position: absolute;
-			display: block;
-			margin: auto;
-			z-index: -1;
-		}
-
-		.ducks {
-			position: absolute;
-			top: 40%;
-			left: 40%;
-			height: 100px;
-			width: 100px;
-			transform-origin: 0% 50%!important;
-		}
-
-		#leaves {
-			top: -450px;
-			left: -50px;
-			height: 100%;
-			width: 100%;
-			position: absolute;
-			display: block;
-			margin: auto;
-			z-index: 3;
-		}
-	}
-	</style>
-	<title>babyDuck</title>
+@media (max-width: 480px) {
+@font-face {
+	font-family: babyblocks;
+	src: url(web/babyblocks.ttf);
+}
+#links {
+	color: floralwhite;
+	height: 10%;
+	bottom: 5%;
+	width: 100%;
+	position: absolute;
+	font-family: babyblocks;
+	z-index: 4;
+}
+#text {
+	font-size: 2.3em;
+	height: 70%;
+	top: 10%;
+	width: 100%;
+	position: absolute;
+	z-index: 4;
+	font-family: babyblocks;
+}
+#anim {
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+}
+#topCrawl {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-origin: 150px 100px!important;
+}
+.ducks {
+	position: absolute;
+	top: 40%;
+		left: 40%;
+	transform-origin: 0% 50%!important;
+}
+#bg {
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("web/pantallas/bgS.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+}
+</style>
+<title>babyDuck</title>
 </head>
 
 <body>
-	<div id="bgGraphics" alt="background">
-		<img src="web/ground.svg" id="bg">
-		<img src="web/trees.svg" id="trees">
-		<img src="web/treesLeaves.svg" id="leaves">
-	</div>
-	<div id="anim">
-		<img src="web/babyCrawlanimTopP0010-0048.svg" id="topCrawl"></img>
-	</div>
-
-	<div id="cuerpo">
-		<!--<iframe id="crawl" src="https://player.vimeo.com/video/168608161?autoplay=1&loop=1&background=ffff" height="640px" width="360px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-	</div>
-	<div id="text">
-		Baby duck is a small child(between 0 and 2 years) that will be involve in an non adult logical enviroment, which will be a difficulty for the player because it will have to deal with the babies coordination of senses with motor responses, and sensory
-		curiosity about the world.
-		<br>
-
-
-		<br></div>
-	<h1 id="links">
-(In development)
-<a href="http://issuu.com/tocharomera/docs/gdden">D_O_C: Game Design Document</a>
-</h1>
-
-	<script>
+<div id="bg" alt="background"> </div>
+<div id="anim"> <img src="web/baby/babyAnimTopS.svg" id="topCrawl"> </div>
+<div id="text"> Baby duck is a small child(between 0 and 2 years) that will be involve in an non adult logical enviroment, which will be a difficulty for the player because it will have to deal with the babies coordination of senses with motor responses, and sensory
+  curiosity about the world. <br>
+  <br>
+</div>
+<h1 id="links"> (In development) <a href="http://issuu.com/tocharomera/docs/gdden">D_O_C: Game Design Document</a> </h1>
+<script>
 		var colours = ["white", "coral", "pink", "aqua", "yellow", "gold", "blue"],
 			idx;
 		var cursorInPage = false;
 		$(document).ready(function() {
-			for (var i = 0; i < 7; i++) {
-				$('#anim').append('<image id="' + i + '" class="ducks" src="web/duck.svg"></image>');
+			for (var i = 0; i < 3; i++) {
+				$('#anim').append('<image id="' + i + '" class="ducks" src="web/ducks/duckS.png"></image>');
+			if($(window).width() > 1224) {
+				$("#topCrawl").attr("src", "web/baby/babyAnimTopL.svg");
+         $("#"+i).attr("src", "web/ducks/duckL.png");
+     } else if ($(window).width() > 480){
+		 $("#topCrawl").attr("src", "web/baby/babyAnimTopM.svg");
+         $("#"+i).attr("src", "web/ducks/duckM.png");
+     }else{
+		 $("#topCrawl").attr("src", "web/baby/babyAnimTopS.svg");
+		 $("#"+i).attr("src", "web/ducks/duckS.png");
+	 }
 			}
 			var div = $('#text');
 			var chars = div.text().split('');
@@ -395,5 +348,4 @@
 		});
 	</script>
 </body>
-
 </html>
