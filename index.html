@@ -5,11 +5,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="web/jQueryRotate.js"></script>
 <style>
-@media only screen and (min-width : 1224px) {/* Styles */
-@font-face {
+	@font-face {
 	font-family: babyblocks;
 	src: url(web/babyblocks.ttf);
 }
+	@font-face {
+	font-family: Consolas;
+	src: url(web/Consolas.ttf);
+}
+@font-face {
+	font-family: Pixeled;
+	src: url(web/Pixeled.ttf);
+
+}
+@media only screen and (min-width : 1224px) {/* Styles */
+
+	body{
+		background-color: #FFF;
+	}
 #crawl {
 	position: absolute;
 	height: 30%;
@@ -17,22 +30,45 @@
 	background: #1B9F07;
 }
 #links {
-	color: floralwhite;
-	height: 10%;
-	bottom: 5%;
-	width: 100%;
+	color: hotpink;
+	text-align:right;
+	bottom: 0%;
+	width: 95%;
 	position: absolute;
 	font-family: babyblocks;
 	z-index: 4;
 }
-#text {
+#text1 {
 	font-size: 2.3em;
 	height: 70%;
-	top: 10%;
-	width: 100%;
+	top: 5%;
+	width: 95%;
 	position: absolute;
 	z-index: 4;
 	font-family: babyblocks;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+	h1{
+		color:#164201;
+	text-decoration: none!important;
+	font-family: Consolas;
+	font-size: 2.3vw;
+	}
+	#text2 {
+		
+		position: absolute;
+	top: 25%;
+	width:95%;
+		
+	color:#164201;
+	text-decoration: none!important;
+	font-family: Consolas;
+	font-size: 1.3vw;
+		overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
 }
 #anim {
 	position: absolute;
@@ -65,30 +101,56 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+	#back{
+		position: absolute;
+		text-align: left;
+	bottom: 1%;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+}
 }
 
 @media (min-width: 480px) and (max-width: 1224px) {
+	body{
+		
+	}
 @font-face {
 	font-family: babyblocks;
 	src: url(web/babyblocks.ttf);
 }
-#links {
-	color: floralwhite;
-	height: 10%;
-	bottom: 5%;
-	width: 100%;
-	position: absolute;
-	font-family: babyblocks;
-	z-index: 4;
-}
-#text {
+
+#text1 {
 	font-size: 2.3em;
 	height: 70%;
 	top: 10%;
-	width: 100%;
+	width: 95%;
 	position: absolute;
 	z-index: 4;
 	font-family: babyblocks;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+	h1{
+		color:grey;
+	text-decoration: none!important;
+	font-family: Consolas;
+	font-size: 2.3vw;
+	}
+	#text2 {
+		position: absolute;
+		margin: auto;
+	top: 35%;
+	width:95%;
+	color:#164201;
+	text-decoration: none!important;
+	font-family: Consolas;
+	font-size: 1.5vw;
+		overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
 }
 #anim {
 	position: absolute;
@@ -121,6 +183,26 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+	#links {
+	color: lightseagreen;
+	text-align: left;
+	bottom: 2%;
+	width: 100%;
+	position: absolute;
+	font-family: babyblocks;
+	z-index: 4;
+}
+	#back{
+	
+		text-align: right;
+	bottom: 2%;
+		width: 95%;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+			position: absolute;
+}
 }
 
 @media (max-width: 480px) {
@@ -128,23 +210,39 @@
 	font-family: babyblocks;
 	src: url(web/babyblocks.ttf);
 }
-#links {
-	color: floralwhite;
-	height: 10%;
-	bottom: 5%;
-	width: 100%;
-	position: absolute;
-	font-family: babyblocks;
-	z-index: 4;
-}
-#text {
-	font-size: 2.3em;
+	body{
+		background-color: #FFF;
+	}
+
+#text1 {
+	font-size: 5.3vw;
 	height: 70%;
 	top: 10%;
-	width: 100%;
+	width: 95%;
 	position: absolute;
 	z-index: 4;
 	font-family: babyblocks;
+	overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
+}
+		h1{
+		color:#164201;
+	text-decoration: none!important;
+	font-family: Consolas;
+	font-size: 2.3vw;
+	}
+	#text2 {
+		position: absolute;
+	top: 35%;
+	width:95%;
+	color:#164201;
+	text-decoration: none!important;
+	font-family: Consolas;
+	font-size: 2.3vw;
+		overflow-wrap: break-word;
+	text-align: justify;
+	text-justify: inter-word;
 }
 #anim {
 	top: 0px;
@@ -176,21 +274,56 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+	#back{
+		position: absolute;
+		text-align: right;
+	bottom: 2%;
+		width:95%;
+	font-size:  1.3vw;
+	color:grey;
+	text-decoration: none!important;
+	font-family: Pixeled;
+}
+	#links {
+	color: darkorange;
+	
+	bottom: 2%;
+	width: 100%;
+	position: absolute;
+	font-family: babyblocks;
+	z-index: 4;
+}
 }
 </style>
 <title>babyDuck</title>
 </head>
 
 <body>
-<div id="bg" alt="background"> </div>
-<div id="anim"> <img src="web/baby/babyAnimTopS.svg" id="topCrawl"> </div>
-<div id="text"> Baby duck is a small child(between 0 and 2 years) that will be involve in an non adult logical enviroment, which will be a difficulty for the player because it will have to deal with the babies coordination of senses with motor responses, and sensory
-  curiosity about the world. <br>
+<!--<div id="bg" alt="background"> </div>-->
+<div id="anim"> <!--<img src="web/baby/babyAnimTopS.svg" id="topCrawl">--> </div>
+<div id="text1"> Baby duck is a small child(between 0 and 2 years) that will be involve in an non adult logical enviroment, which will be a difficulty for the player because it will have to deal with the babies coordination of senses with motor responses, and sensory
+  curiosity about the world.
+   <br>
   <br>
 </div>
+<div id="text2">
+	<h1>OBJECTIVES</h1>
+	<br>
+The main purpose of the game is to involve adults in the learning process of babies, in a joyful way there will be abstractions of how could we dive in into the senses of the small childrens.
+<br>
+<h1>GENRE</h1>
+<br>
+The game is based on the Puzzle platform, with an orientation of Art-game and Casual-game. The engine will be a 3D enviroment with possible changes between first and third person point of view but without any change in the development only for questions of taste for the user.
+<br>
+<h1>VISUAL STYLE</h1>
+<br>
+The development of the game will be done into an 3D space with no barriers but limited by the infinite repetition of landscape, that means it is a round world. The special features of the game will be the psycodelich view for an adult perspective, but based on the development of the sight of a baby. The measure of distance and the distinction of lights and colors will make not easy to find the proper paths in the plot scenario so could be easy to get lost but joyful no to go straigh for the target, playing also with the random orientation and swaping directions while time pass by.
+<br>
+</div>
 <h1 id="links"> (In development) <a href="http://issuu.com/tocharomera/docs/gdden">D_O_C: Game Design Document</a> </h1>
+<a href="https://tocharomera.github.io/bio/" id="back">Back</a>
 <script>
-		var colours = ["white", "coral", "pink", "aqua", "yellow", "gold", "blue"],
+		var colours = ["green", "red", "grey", "violet", "orange", "brown", "blue"],
 			idx;
 		var cursorInPage = false;
 		$(document).ready(function() {
@@ -207,7 +340,7 @@
 		 $("#"+i).attr("src", "web/ducks/duckS.png");
 	 }
 			}
-			var div = $('#text');
+			var div = $('#text1');
 			var chars = div.text().split('');
 			div.html('');
 			for (var i = 0; i < chars.length; i++) {
