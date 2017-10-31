@@ -458,8 +458,8 @@ The development of the game will be done into an 3D space with no barriers but l
 						animateTo: direction,
 					})
 					$('#' + idNum).animate({
-						top: mouseMovementY + 100,
-						left: mouseMovementX + (100 * idNum + 1)
+						top: mouseMovementY - 50,
+						left: mouseMovementX - (50 * idNum + 1)
 					}, 500 + (150 * idNum + 1), function() {
 						animateDiv(idNum);
 					});
