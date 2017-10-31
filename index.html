@@ -374,8 +374,7 @@ The development of the game will be done into an 3D space with no barriers but l
 				this.idNum = idNum;
 				this.direction = 0;
 				this.elem = document.getElementById('#' + idNum);
-				this.oldw = 0;
-				this.oldh = 0;
+				
 				//var duck = '<image id='+idNum+' src="web/duck.svg" top="0" left="0" style="position:absolute; height:100px; width:100px margin:auto; display:block;"></image>';
 				this.makeNewPosition = function() {
 					this.h = $(window).height() - 100;
@@ -385,11 +384,9 @@ The development of the game will be done into an 3D space with no barriers but l
 					return [nh, nw];
 				}
 				this.animateDiv = function(idNum) {
-					this.item = $('#' + idNum);
 					this.idNum = idNum;
-					this.oldPos = $('#' + idNum).position();
-					this.oldw = oldPos.left;
-					this.oldh = oldPos.top;
+					this.item = $('#' + idNum);
+					
 					this.newq = makeNewPosition();
 					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
 
@@ -437,13 +434,13 @@ The development of the game will be done into an 3D space with no barriers but l
 				this.animateDiv = function(idNum) {
 					this.dx = mouseMovementX;
 					this.dy = mouseMovementY;
-					this.baby = $('#topCrawl');
+					/*this.baby = $('#topCrawl');
 					this.babyCenter = [baby.offset().left + baby.width(), baby.offset().top + baby.height() / 2];
-					this.babyDirection = Math.atan2(-(dx - babyCenter[1]), (dy - babyCenter[0])) * (180 / Math.PI);
+					this.babyDirection = Math.atan2(-(dx - babyCenter[1]), (dy - babyCenter[0])) * (180 / Math.PI);*/
 					this.item = $('#' + idNum);
 					this.itemCenter = [item.offset().left + item.width() / 2, item.offset().top + item.height() / 2];
 					this.direction = Math.atan2((dx + 100 - itemCenter[0]), -(dy + 150 - itemCenter[1])) * (180 / Math.PI);
-					this.babyrotated = $('#topCrawl').getRotateAngle();
+					this.babyrotated = /*$('#topCrawl').getRotateAngle();
 					this.rotated = $('#' + idNum).getRotateAngle();
 
 					$('#topCrawl').rotate({
@@ -454,7 +451,7 @@ The development of the game will be done into an 3D space with no barriers but l
 					$('#topCrawl').animate({
 						top: mouseMovementY - 100,
 						left: mouseMovementX - 150
-					}, 100, function() {});
+					}, 100, function() {});*/
 					$('#' + idNum).rotate({
 						duration: 1000,
 						angle: rotated,
